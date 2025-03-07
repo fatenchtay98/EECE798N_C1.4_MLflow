@@ -1,0 +1,25 @@
+name: MLflow Auto-Train & Deploy
+
+on:
+  push:
+    paths:
+      - "**"  # Trigger the action when any file changes
+
+jobs:
+  train-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set Up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Train Model with MLflow
+        run: python automated_model_pipeline.py
