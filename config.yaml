@@ -1,0 +1,8 @@
+mlflow:
+  tracking_uri: "https://12da-35-239-253-224.ngrok-free.app/"
+  experiment_name: "adult_income_experiment2"
+model:
+  name: "Adult_Income_Prediction_Model"
+  model_directory: "model"
+data:
+  filepath: "data/adult.csv"
