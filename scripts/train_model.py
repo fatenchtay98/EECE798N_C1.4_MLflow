@@ -75,13 +75,9 @@ def train_logistic_regression(X_train, X_test, y_train, y_test):
     lr_model_1 = LogisticRegression(C=lr_params_1["C"], solver=lr_params_1["solver"], max_iter=lr_params_1["max_iter"])
     log_model_run(lr_model_1, "Logistic Regression", lr_params_1, X_train, X_test, y_train, y_test)
 
-    # lr_params_2 = {"C": 10.0, "solver": "lbfgs", "max_iter": 200}
-    # lr_model_2 = LogisticRegression(C=lr_params_2["C"], solver=lr_params_2["solver"], max_iter=lr_params_2["max_iter"])
-    # log_model_run(lr_model_2, "Logistic Regression", lr_params_2, X_train, X_test, y_train, y_test)
-
-    # lr_params_3 = {"C": 0.5, "solver": "saga", "max_iter": 500}
-    # lr_model_3 = LogisticRegression(C=lr_params_3["C"], solver=lr_params_3["solver"], max_iter=lr_params_3["max_iter"])
-    # log_model_run(lr_model_3, "Logistic Regression", lr_params_3, X_train, X_test, y_train, y_test)
+    lr_params_2 = {"C": 10.0, "solver": "lbfgs", "max_iter": 200}
+    lr_model_2 = LogisticRegression(C=lr_params_2["C"], solver=lr_params_2["solver"], max_iter=lr_params_2["max_iter"])
+    log_model_run(lr_model_2, "Logistic Regression", lr_params_2, X_train, X_test, y_train, y_test)
 
 def train_random_forest(X_train, X_test, y_train, y_test):
     """
@@ -93,11 +89,11 @@ def train_random_forest(X_train, X_test, y_train, y_test):
                                        min_samples_split=rf_params_1["min_samples_split"])
     log_model_run(rf_model_1, "Random Forest", rf_params_1, X_train, X_test, y_train, y_test)
 
-    # rf_params_2 = {"n_estimators": 100, "max_depth": 15, "min_samples_split": 5}
-    # rf_model_2 = RandomForestClassifier(n_estimators=rf_params_2["n_estimators"], 
-    #                                    max_depth=rf_params_2["max_depth"], 
-    #                                    min_samples_split=rf_params_2["min_samples_split"])
-    # log_model_run(rf_model_2, "Random Forest", rf_params_2, X_train, X_test, y_train, y_test)
+    rf_params_2 = {"n_estimators": 100, "max_depth": 15, "min_samples_split": 5}
+    rf_model_2 = RandomForestClassifier(n_estimators=rf_params_2["n_estimators"], 
+                                       max_depth=rf_params_2["max_depth"], 
+                                       min_samples_split=rf_params_2["min_samples_split"])
+    log_model_run(rf_model_2, "Random Forest", rf_params_2, X_train, X_test, y_train, y_test)
 
     # rf_params_3 = {"n_estimators": 200, "max_depth": 20, "min_samples_split": 10}
     # rf_model_3 = RandomForestClassifier(n_estimators=rf_params_3["n_estimators"], 
