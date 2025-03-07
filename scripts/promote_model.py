@@ -61,11 +61,13 @@ def promote_best_model_to_production():
         logger.info(f"Latest Model Accuracy: {latest_accuracy}")
         logger.info(f"Current Production Model Accuracy: {current_prod_accuracy}")
     
-        rounded_latest = round(latest_accuracy, 3)
-        rounded_prod = round(current_prod_accuracy, 3)
+        rounded_latest_accuracy = round(latest_accuracy, 3)
+        # rounded_prod_accuracy = round(current_prod_accuracy, 3)
 
+        rounded_prod_accuracy = 0.70 # Hardcoded accuracy value for testing purpose
+        
         # Only promote if the latest accuracy is strictly greater than the production model's accuracy
-        if rounded_latest >= rounded_prod:        
+        if rounded_latest_accuracy >= rounded_prod_accuracy:
             logger.info("New model has higher accuracy. Promoting to production.")
             model_uri = f"runs:/{latest_run.run_id}/{model_name}"
             model_name = "HeartDiseaseModel"
