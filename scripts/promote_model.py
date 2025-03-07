@@ -33,7 +33,7 @@ def promote_best_model_to_production():
 
         if best_run:
             model_uri = f"runs:/{best_run.info.run_id}/{model_name}"
-            model_name = "HeartDiseaseModel"
+            model_name = "Adult_Income_Prediction_Model"
 
             # Register the model
             mv = mlflow.register_model(model_uri=model_uri, name=model_name)
@@ -70,7 +70,7 @@ def promote_best_model_to_production():
         if rounded_latest_accuracy >= rounded_prod_accuracy:
             logger.info("New model has higher accuracy. Promoting to production.")
             model_uri = f"runs:/{latest_run.run_id}/{model_name}"
-            model_name = "HeartDiseaseModel"
+            model_name = "Adult_Income_Prediction_Model"
 
             # Register and promote to production
             mv = mlflow.register_model(model_uri=model_uri, name=model_name)
